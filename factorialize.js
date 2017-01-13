@@ -28,12 +28,11 @@ function factorialize(num) {
 	    First Part of the recursion method
 	    You need to remember that you won’t have just one call, you’ll have several nested calls
 	    
-	    Each call: num === "?"        	         num * factorialize(num - 1)
-	    1st call – factorialize(5) will return    5  * factorialize(5 - 1) // factorialize(4)
-	    2nd call – factorialize(4) will return    4  * factorialize(4 - 1) // factorialize(3)
-	    3rd call – factorialize(3) will return    3  * factorialize(3 - 1) // factorialize(2)
-	    4th call – factorialize(2) will return    2  * factorialize(2 - 1) // factorialize(1)
-	    5th call – factorialize(1) will return    1  * factorialize(1 - 1) // factorialize(0)
+	    1st call – factorialize(5) =>    5  * factorialize(5 - 1) // factorialize(4)
+	    2nd call – factorialize(4) =>    4  * factorialize(4 - 1) // factorialize(3)
+	    3rd call – factorialize(3) =>    3  * factorialize(3 - 1) // factorialize(2)
+	    4th call – factorialize(2) =>    2  * factorialize(2 - 1) // factorialize(1)
+	    5th call – factorialize(1) =>    1  * factorialize(1 - 1) // factorialize(0)
 	    
 	    Second part of the recursion method
 	    The method hits the if condition, it returns 1 which num will multiply itself with

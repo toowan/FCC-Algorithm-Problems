@@ -2,7 +2,7 @@
 
 function confirmEnding(str, target) {
 
-  // Specify the start index of the char to not include in the returned substring
+  // Specify the start index of the char to include in the returned substring
   var startIndex = (str.length - target.length);
   // Specify the end index of the char to NOT include in the returned substring
   var endIndex = (str.length);

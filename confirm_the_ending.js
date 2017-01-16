@@ -3,9 +3,9 @@
 function confirmEnding(str, target) {
 
   // Specify the start index of the char to not include in the returned substring
-  var startIndex = (str.length - target.length);  // 11 - 4 = 7
+  var startIndex = (str.length - target.length);
   // Specify the end index of the char to NOT include in the returned substring
-  var endIndex = (str.length);  // 11 - 1 = 10
+  var endIndex = (str.length);
 
   // Slice out the end substring that matches the length of the target
   var endSubstring = str.substring(startIndex, endIndex);

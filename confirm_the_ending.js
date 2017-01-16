@@ -11,9 +11,10 @@ function confirmEnding(str, target) {
   var endSubstring = str.substring(startIndex, endIndex);
 
   // If the target matches the end substring, return true
-  if target === endSubstring {
-    return true
-  };
+  if (target === endSubstring) {
+    return true;
+  }
+    return false;
 }
 
 

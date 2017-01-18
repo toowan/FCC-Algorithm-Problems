@@ -24,11 +24,11 @@ function rot13(str) {
     if ((str.charCodeAt(i) < 65) || (str.charCodeAt(i) > 90)) {
       decodedString.push(str[i]); 
     } 
-    // If characters are in the second half of the alphabet
+    // If characters are in the second half of the alphabet, subtract 13
     else if (str.charCodeAt(i) > 77) {
       decodedString.push(String.fromCharCode(str.charCodeAt(i) - 13)); 
     }
-    // If characters are in the first half of the alphabet
+    // If characters are in the first half of the alphabet, add 13
     else {
       decodedString.push(String.fromCharCode(str.charCodeAt(i) + 13));
     }

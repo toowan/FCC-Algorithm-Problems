@@ -1,4 +1,4 @@
-// DNA PAIRING
+// MISSING LETTERS
 /*
 The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
 
@@ -12,6 +12,7 @@ The character and its pair are paired up in an array, and all the arrays are gro
 */
 
 
+
 function pairElement(str) {
   // Split string into array 
   var dnaArray = str.split('');    // ["A", "T", "C", "G", "A"]
@@ -22,22 +23,22 @@ function pairElement(str) {
   // Store nucleotide pairings in a hash
   var nucPairings = {A:'T', T:'A', C:'G', G:'C'};
 
-  // Loop through given array to find corresponding nucleotide for each
+  // Loop through given array and retrieve corresponding nucleotide for each
   for (var i = 0; i < dnaArray.length; i++) {
     var nucMatch = nucPairings[dnaArray[i]];   // "T" 
-
+    
     // Store the nucleotide and its match their own subarray
     var subArrayPair = []; 
-    subArrayPair.push(dnaArray[i]); 
-    subArrayPair.push(nucMatch);    // ["T", "A"]
+    subArrayPair.push(dnaArray[i], nucMatch); // ["T", "A"]
     
     // Push all subarray pairs into outer array.  
-    dnaStrand.push(subArrayPair);  // [["T", "A"]]
+    dnaStrand.push(subArrayPair); 
   }
   
   
   return dnaStrand;
 }
+
 
 
 

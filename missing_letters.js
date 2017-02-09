@@ -21,6 +21,7 @@ function fearNotLetter(str) {   // "abce"
     } 
   }
   
+  return undefined;  
 }
 
 

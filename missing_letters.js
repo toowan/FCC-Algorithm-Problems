@@ -16,7 +16,7 @@ function fearNotLetter(str) {   // "abce"
     
     // If difference between two numbers is greater than 1, find the missing unicode and convert it to letter. 
     if (diff > 1)   {   
-      var missingLetter = String.fromCharCode(str.charCodeAt(i) +  1);
+      var missingLetter = String.fromCharCode(str.charCodeAt(i) +  1);  // String.fromCharCode(99 + 1) = "d"
       return missingLetter;
     } 
   }

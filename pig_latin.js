@@ -17,8 +17,7 @@ function translatePigLatin(str) {
   // Convert string into array of letters
   var strArray = str.split ('');
   var vowels = ['a', 'e', 'i', 'o', 'u']; 
-  var newString = ''; 
-  
+
    
   // If first index is a vowel, add 'way' to the end
    if (vowels.indexOf(strArray[0]) !== -1) {

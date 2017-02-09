@@ -1,47 +1,32 @@
 // MISSING LETTERS
 /*
-The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+Missing letters
+Find the missing letter in the passed letter range and return it.
 
-Base pairs are a pair of AT and CG. Match the missing element to the provided character.
-
-Return the provided character as the first element in each array.
-
-For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
-
-The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+If all letters are present in the range, return undefined.
 */
 
 
-function pairElement(str) {
-  // Split string into array 
-  var dnaArray = str.split('');    // ["A", "T", "C", "G", "A"]
-  
-  // Outer array to store matched pairs at output
-  var dnaStrand = []; 
-  
-  // Store nucleotide pairings in a hash
-  var nucPairings = {A:'T', T:'A', C:'G', G:'C'};
 
-  // Loop through given array to find corresponding nucleotide for each
-  for (var i = 0; i < dnaArray.length; i++) {
-    var nucMatch = nucPairings[dnaArray[i]];   // "T" 
-
-    // Store the nucleotide and its match their own subarray
-    var subArrayPair = []; 
-    subArrayPair.push(dnaArray[i]); 
-    subArrayPair.push(nucMatch);    // ["T", "A"]
+function fearNotLetter(str) {   // "abce"
+  
+  // convert each character to its unicode and find the difference between two adjacent numbers
+  for (var i = 0; i < str.length; i++) {   // "97" "98" "99" "101" 
+    var diff = str.charCodeAt(i + 1) - str.charCodeAt(i);   // 101-99 = 2 
     
-    // Push all subarray pairs into outer array.  
-    dnaStrand.push(subArrayPair);  // [["T", "A"]]
+    // If difference between two numbers is greater than 1, find the missing unicode and convert it to letter. 
+    if (diff > 1)   {   
+      var missingLetter = String.fromCharCode(str.charCodeAt(i) +  1);
+      return missingLetter;
+    } 
   }
   
-  
-  return dnaStrand;
 }
 
 
 
 // TEST CASES
-pairElement("ATCGA") // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]].
-pairElement("TTGAG") // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]].
-pairElement("CTCTA") // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]].
+fearNotLetter("abce") // "d".
+fearNotLetter("abcdefghjklmno") // "i".
+fearNotLetter("bcd") // undefined.
+fearNotLetter("yz") // undefined.

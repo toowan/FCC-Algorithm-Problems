@@ -20,6 +20,7 @@ If either argument isn't a valid number, return undefined.
 
 function addTogether() {
 
+
   // Store arguments in an array
   var args = Array.from(arguments);  // [2, 3]
 
@@ -35,15 +36,15 @@ function addTogether() {
   if (args.length === 2){
     return args[0] + args[1]; 
   }
-  // If there are one argument, return a function that adds another number to it
+  // If there's only one argument, return a function.
   else {
-    // Store first argument
+    // Store first argument 
     var x = args[0];
     // Return a function that adds another number to x.
-    var addOneMore = function (y) {
-      return addTogether(x, y);  // recursion
+    var addFunction = function (y) {
+      return x + y;  
     };
-    return addOneMore; 
+    return addFunction; 
   }
   
 }

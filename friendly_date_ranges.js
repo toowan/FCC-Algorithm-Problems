@@ -62,7 +62,7 @@ function makeFriendlyDates(arr) {  // arr = ["2016-12-01", "2018-02-03"]
   }
 
   
- // If dates are exactly the same
+  // If dates are exactly the same
   if (diffDays === 0) {
    firstDate = months[startMonth] + " " + dayEnding(startDay) + ", " + startYear;
    newDateRange.push(firstDate); 
@@ -79,22 +79,22 @@ function makeFriendlyDates(arr) {  // arr = ["2016-12-01", "2018-02-03"]
     } else if (startYear === endYear && startMonth !== endMonth) {
     firstDate = months[startMonth] + " " + dayEnding(startDay) + ", " + startYear;
     secondDate = months[endMonth] + " " + dayEnding(endDay); 
-    } else if (startYear !== endYear && diffDays <= 365) {
+    } else if (startYear !== endYear && startMonth !== endMonth) {
     firstDate = months[startMonth] + " " + dayEnding(startDay);
     secondDate = months[endMonth] + " " + dayEnding(endDay);
-  }
+    }
 
   newDateRange.push(firstDate);
   newDateRange.push(secondDate);
- } 
+  } 
  
- // If range difference is greater or equal to 1 year
- else if (diffDays >= 365) {
-   firstDate = months[startMonth] + " " + dayEnding(startDay) + ", " + startYear;
-   secondDate = months[endMonth] + " " + dayEnding(endDay) + ", " + endYear;
-   newDateRange.push(firstDate);
-   newDateRange.push(secondDate);
- }
+  // If range difference is greater or equal to 1 year
+  else if (diffDays >= 365) {
+    firstDate = months[startMonth] + " " + dayEnding(startDay) + ", " + startYear;
+    secondDate = months[endMonth] + " " + dayEnding(endDay) + ", " + endYear;
+    newDateRange.push(firstDate);
+    newDateRange.push(secondDate);
+  }
   
   
   // return new date
